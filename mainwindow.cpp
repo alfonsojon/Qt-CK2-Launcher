@@ -94,7 +94,8 @@ void MainWindow::loadStyles()
 
     ui->widget->setStyleSheet(
         "#widget { background-image: url("+launcherPath+"background.jpg); }"
-        ".QPushButton { background-image: url("+launcherPath+"button_small.jpg);border-width: 1px; }"
+        "#buttonRegister { background-image: url("+launcherPath+"button_small.jpg);border-width: 1px; }"
+        "#buttonRun { background-image: url("+launcherPath+"button_big.jpg);border-width: 1px; }"
     );
 }
 
