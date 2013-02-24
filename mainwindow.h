@@ -41,6 +41,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QString     execPath;
     QStringList listFiles(QString directory, QString extension);
     QString     extractName(QString iniDir, QString iniName);
     void        loadStyles();
@@ -50,6 +51,8 @@ private slots:
     void        buttonClickedRegister();
     void        buttonClickedRun();
     void        webviewLoadFinished(bool status);
+    void        gameStarted();
+    void        gameError();
 };
 
 #endif // MAINWINDOW_H

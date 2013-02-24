@@ -4,8 +4,8 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    settings(new QSettings)
+    settings(new QSettings),
+    ui(new Ui::MainWindow)
 {
     // Check if this first run
     if (! settings->value("internal/isConfigured").toBool()) {
@@ -129,6 +129,8 @@ void MainWindow::buttonClickedRegister()
 
 void MainWindow::buttonClickedRun()
 {
+    execPath = settings->value("userOptions/pathGame").toString()+settings->value("internal/executableName").toString();
+
     QStringList arguments;
     QStringList keysList = settings->allKeys();
     foreach(QString key, keysList) {
@@ -141,11 +143,32 @@ void MainWindow::buttonClickedRun()
     }
 
     QProcess *gameProcess = new QProcess();
-    gameProcess->start(
-        settings->value("userOptions/pathGame").toString()+settings->value("internal/executableName").toString(),
-        arguments);
+    connect(gameProcess, SIGNAL(started()), SLOT(gameStarted()));
+    connect(gameProcess, SIGNAL(error(QProcess::ProcessError)), SLOT(gameError()));
+    gameProcess->start(execPath, arguments);
     gameProcess->closeWriteChannel();
+}
 
+void MainWindow::gameError()
+{
+    QProcess *gameProcess = qobject_cast<QProcess *>(sender());
+    QMessageBox error(this);
+    QPushButton *configure = error.addButton(tr("Configure..."), QMessageBox::RejectRole);
+    QPushButton *ok = error.addButton(tr("OK"), QMessageBox::AcceptRole);
+    error.setDefaultButton(ok);
+    error.setEscapeButton(ok);
+    error.setWindowTitle(tr("Crusader Kings 2"));
+    error.setText(tr("Failed to start %1: %2").arg(execPath, gameProcess->errorString()));
+    error.setIcon(QMessageBox::Critical);
+    error.exec();
+    if (error.clickedButton() == configure) {
+        FirstDialog dialog(this);
+        dialog.exec();
+    }
+}
+
+void MainWindow::gameStarted()
+{
     // Quit after CK2 running
     QApplication::quit();
 }
