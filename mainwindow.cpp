@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "firstdialog.h"
 
+#include "QDir"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     settings(new QSettings),
@@ -26,6 +28,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->webView->load(QUrl(settings->value("internal/urlLauncher").toString()));
     // Disable context menu
     ui->webView->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    foreach(QString key, settings->allKeys())
+    {
+        if (key.right(4) == ".mod")
+        {
+            QDir dir(settings->value("userOptions/pathConfig").toString() + "mod/");
+            if(!dir.exists(key))
+                settings->remove(key);
+        }
+    }
 
     foreach(QString modName, listFiles(settings->value("userOptions/pathConfig").toString() + "mod/", "*.mod"))
     {
@@ -135,6 +147,7 @@ void MainWindow::buttonClickedRun()
 
     QStringList arguments;
     QStringList keysList = settings->allKeys();
+
     foreach(QString key, keysList) {
         if (key.right(4) == ".mod" && settings->value(key) == Qt::Checked) {
             arguments << "-mod=mod/" + key;
