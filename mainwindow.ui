@@ -135,10 +135,7 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">selection-background-color: rgb(255, 255, 255);</string>
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QPushButton" name="buttonRegister">

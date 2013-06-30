@@ -92,9 +92,11 @@ void MainWindow::loadStyles()
     icon.addFile(launcherPath+"logo.ico", QSize(), QIcon::Normal, QIcon::Off);
     setWindowIcon(icon);
 
-    ui->widget->setStyleSheet("background-image: url("+launcherPath+"background.jpg);");
-    ui->buttonRegister->setStyleSheet("background-image: url("+launcherPath+"button_small.jpg);border-width: 1px;");
-    ui->buttonRun->setStyleSheet("background-image: url("+launcherPath+"button_big.jpg);border-width: 1px;");
+    ui->widget->setStyleSheet(
+        "#widget { background-image: url("+launcherPath+"background.jpg); }"
+        "#buttonRegister { background-image: url("+launcherPath+"button_small.jpg);border-width: 1px; }"
+        "#buttonRun { background-image: url("+launcherPath+"button_big.jpg);border-width: 1px; }"
+    );
 }
 
 
