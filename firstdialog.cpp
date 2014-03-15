@@ -8,7 +8,7 @@ FirstDialog::FirstDialog(QWidget *parent) :
     ui->setupUi(this);
 
     // Set default paths
-    ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/.steam/");
+    ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/.steam/steam/");
     ui->comboBoxPathConfig  ->addItem(QDir::homePath()+"/Paradox Interactive/Europa Universalis IV/");
 }
 
