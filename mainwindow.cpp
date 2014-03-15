@@ -160,7 +160,7 @@ void MainWindow::buttonClickedRun()
     QProcess *gameProcess = new QProcess();
     connect(gameProcess, SIGNAL(started()), SLOT(gameStarted()));
     connect(gameProcess, SIGNAL(error(QProcess::ProcessError)), SLOT(gameError()));
-    gameProcess->start(execPath, arguments);
+    gameProcess->startDetached(execPath, arguments);
     gameProcess->closeWriteChannel();
 }
 
@@ -172,7 +172,7 @@ void MainWindow::gameError()
     QPushButton *ok = error.addButton(tr("OK"), QMessageBox::AcceptRole);
     error.setDefaultButton(ok);
     error.setEscapeButton(ok);
-    error.setWindowTitle(tr("Europa Universalis 4"));
+    error.setWindowTitle(tr("Europa Universalis IV"));
     error.setText(tr("Failed to start %1: %2").arg(execPath, gameProcess->errorString()));
     error.setIcon(QMessageBox::Critical);
     error.exec();
