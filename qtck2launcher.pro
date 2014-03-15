@@ -6,7 +6,7 @@
 
 QT       += core gui webkit
 
-TARGET = qtck2launcher
+TARGET = qteu4launcher
 TEMPLATE = app
 
 

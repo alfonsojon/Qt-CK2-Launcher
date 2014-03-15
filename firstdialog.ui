@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>QT CK2 Launcher configuration</string>
+   <string>QT EU4 Launcher configuration</string>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -212,7 +212,7 @@
     <string>Disable steam-related functions</string>
    </property>
    <property name="text">
-    <string>No steam mode</string>
+    <string>No Steam mode</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBoxAdvancedMode">

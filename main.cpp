@@ -7,9 +7,9 @@
 int main(int argc, char *argv[])
 {
     // Used by QSettings
-    QCoreApplication::setOrganizationName   ("qtck2launcher");
-    QCoreApplication::setApplicationName    ("qtck2launcher");
-    QCoreApplication::setApplicationVersion ("29-01-2013 release 2");
+    QCoreApplication::setOrganizationName   ("qteu4launcher");
+    QCoreApplication::setApplicationName    ("qteu4launcher");
+    QCoreApplication::setApplicationVersion ("15-03-2014 release 1");
 
     QApplication a(argc, argv);
 

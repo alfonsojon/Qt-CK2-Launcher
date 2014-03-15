@@ -172,7 +172,7 @@ void MainWindow::gameError()
     QPushButton *ok = error.addButton(tr("OK"), QMessageBox::AcceptRole);
     error.setDefaultButton(ok);
     error.setEscapeButton(ok);
-    error.setWindowTitle(tr("Crusader Kings 2"));
+    error.setWindowTitle(tr("Europa Universalis 4"));
     error.setText(tr("Failed to start %1: %2").arg(execPath, gameProcess->errorString()));
     error.setIcon(QMessageBox::Critical);
     error.exec();
@@ -184,7 +184,7 @@ void MainWindow::gameError()
 
 void MainWindow::gameStarted()
 {
-    // Quit after CK2 running
+    // Quit after EU4 running
     QApplication::quit();
 }
 

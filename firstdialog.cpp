@@ -10,7 +10,7 @@ FirstDialog::FirstDialog(QWidget *parent) :
     // Set default paths
     ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/Steam/");
     ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/.local/share/Steam/");
-    ui->comboBoxPathConfig  ->addItem(QDir::homePath()+"/Documents/Paradox Interactive/Crusader Kings II/");
+    ui->comboBoxPathConfig  ->addItem(QDir::homePath()+"/Paradox Interactive/Europa Universalis 4/");
 }
 
 
@@ -23,7 +23,7 @@ void FirstDialog::checkedNoSteam(bool toggled)
 
 void FirstDialog::indexChangedSteam(int newIndex)
 {
-    QString newPath = ui->comboBoxPathSteam->itemText(newIndex)+"SteamApps/common/Crusader Kings II/";
+    QString newPath = ui->comboBoxPathSteam->itemText(newIndex)+"SteamApps/common/Europa Universalis 4/";
     checkAddItem(ui->comboBoxPathGame, newPath);
 }
 
@@ -59,9 +59,9 @@ void FirstDialog::buttonClickedOk()
 
     // Static parameters
     settings.setValue("internal/isConfigured", true);
-    settings.setValue("internal/urlLauncher", "http://www.paradoxplaza.com/in-game/ck2/launcher.html");
+    settings.setValue("internal/urlLauncher", "http://www.paradoxplaza.com/in-game/eu4/launcher.html");
     settings.setValue("internal/urlRegister", "http://forum.paradoxplaza.com/forum/mygames.php");
-    settings.setValue("internal/executableName", "ck2");
+    settings.setValue("internal/executableName", "eu4");
 
     dialogCompleted = true;
     this->close();
