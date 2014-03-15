@@ -8,9 +8,8 @@ FirstDialog::FirstDialog(QWidget *parent) :
     ui->setupUi(this);
 
     // Set default paths
-    ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/Steam/");
     ui->comboBoxPathSteam   ->addItem(QDir::homePath()+"/.local/share/Steam/");
-    ui->comboBoxPathConfig  ->addItem(QDir::homePath()+"/Paradox Interactive/Europa Universalis 4/");
+    ui->comboBoxPathConfig  ->addItem(QDir::homePath()+"/Paradox Interactive/Europa Universalis IV/");
 }
 
 
@@ -23,7 +22,7 @@ void FirstDialog::checkedNoSteam(bool toggled)
 
 void FirstDialog::indexChangedSteam(int newIndex)
 {
-    QString newPath = ui->comboBoxPathSteam->itemText(newIndex)+"SteamApps/common/Europa Universalis 4/";
+    QString newPath = ui->comboBoxPathSteam->itemText(newIndex)+"SteamApps/common/Europa Universalis IV/";
     checkAddItem(ui->comboBoxPathGame, newPath);
 }
 

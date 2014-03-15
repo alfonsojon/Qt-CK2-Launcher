@@ -68,7 +68,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Select DLC's&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Select DLC's&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QListWidget" name="listMod">
@@ -161,7 +161,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Select mods to play&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Select mods to play&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="buddy">
       <cstring>listMod</cstring>
@@ -345,22 +345,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>webView</sender>
-   <signal>loadFinished(bool)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>webviewLoadFinished(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>349</x>
-     <y>200</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>349</x>
-     <y>275</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>listMod</sender>
    <signal>itemChanged(QListWidgetItem*)</signal>
    <receiver>MainWindow</receiver>
@@ -385,6 +369,22 @@
     <hint type="sourcelabel">
      <x>400</x>
      <y>490</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>webView</sender>
+   <signal>loadFinished(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>webviewLoadFinished(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>200</y>
     </hint>
     <hint type="destinationlabel">
      <x>349</x>

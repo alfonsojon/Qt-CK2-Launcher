@@ -9,8 +9,8 @@ This is an open source launcher for Europa Universalis 4 based on QT4. This was 
 ## To Compile on Ubuntu 12.04:
 ```no-highlight
 sudo apt-get install git build-essential libqt4-dev qt4-qmake libqtwebkit-dev
-git clone https://github.com/westonmyers/Qt-CK2-Launcher.git
-cd Qt-CK2-Launcher
+git clone https://github.com/alfonsojon/Qt-EU4-Launcher.git
+cd Qt-EU4-Launcher
 qmake-qt4
 make
 ```
