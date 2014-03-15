@@ -2,7 +2,7 @@ Qt-EU4-Launcher
 ===============
 ![Main Window](https://github.com/alfonsojon/Qt-EU4-Launcher/blob/master/screenshot.png?raw=true)
 
-This is an open source launcher for Europa Universalis 4 based on QT4. This was forked from [westonmyer's Qt-CK2-Launcher].(https://github.com/westonmyers/Qt-CK2-Launcher).
+This is an open source launcher for Europa Universalis 4 based on QT4. This was forked from [westonmyer's Qt-CK2-Launcher](https://github.com/westonmyers/Qt-CK2-Launcher).
 
 [Thread](http://forum.paradoxplaza.com/forum/showthread.php?660805-Qt-Alternative-CK2-Launcher) on Paradox Plaza
 
