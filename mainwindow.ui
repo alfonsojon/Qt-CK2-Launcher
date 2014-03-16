@@ -7,8 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>699</width>
-    <height>551</height>
+    <height>531</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>699</width>
+    <height>531</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>699</width>
+    <height>532</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Europa Universalis IV</string>
@@ -38,7 +56,7 @@
       <x>0</x>
       <y>400</y>
       <width>701</width>
-      <height>151</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -61,9 +79,9 @@
     <widget class="QLabel" name="textDLC">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>20</y>
-       <width>241</width>
+       <x>270</x>
+       <y>11</y>
+       <width>251</width>
        <height>20</height>
       </rect>
      </property>
@@ -75,9 +93,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>261</width>
-       <height>101</height>
+       <y>30</y>
+       <width>251</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="palette">
@@ -150,13 +168,19 @@
      <property name="styleSheet">
       <string notr="true"/>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="textMod">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
-       <width>261</width>
+       <y>10</y>
+       <width>251</width>
        <height>20</height>
       </rect>
      </property>
@@ -171,8 +195,8 @@
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>90</y>
-       <width>160</width>
+       <y>70</y>
+       <width>161</width>
        <height>51</height>
       </rect>
      </property>
@@ -192,10 +216,10 @@
     <widget class="QListWidget" name="listDLC">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>40</y>
-       <width>241</width>
-       <height>101</height>
+       <x>270</x>
+       <y>30</y>
+       <width>251</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="palette">
@@ -268,14 +292,20 @@
      <property name="styleSheet">
       <string notr="true"/>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="buttonRegister">
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>40</y>
-       <width>160</width>
-       <height>51</height>
+       <y>30</y>
+       <width>161</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="autoFillBackground">
@@ -291,6 +321,13 @@
       <bool>false</bool>
      </property>
     </widget>
+    <zorder>textDLC</zorder>
+    <zorder>listMod</zorder>
+    <zorder>textMod</zorder>
+    <zorder>buttonRun</zorder>
+    <zorder>listDLC</zorder>
+    <zorder>buttonRegister</zorder>
+    <zorder>widget_2</zorder>
    </widget>
    <zorder>widget</zorder>
    <zorder>webView</zorder>
@@ -313,6 +350,22 @@
  <resources/>
  <connections>
   <connection>
+   <sender>webView</sender>
+   <signal>loadFinished(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>webviewLoadFinished(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>buttonRegister</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
@@ -325,22 +378,6 @@
     <hint type="destinationlabel">
      <x>349</x>
      <y>273</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonRun</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>buttonClickedRun()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>609</x>
-     <y>515</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>349</x>
-     <y>275</y>
     </hint>
    </hints>
   </connection>
@@ -361,14 +398,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>listDLC</sender>
-   <signal>itemChanged(QListWidgetItem*)</signal>
+   <sender>buttonRun</sender>
+   <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>listItemChanged(QListWidgetItem*)</slot>
+   <slot>buttonClickedRun()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
-     <y>490</y>
+     <x>609</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>349</x>
@@ -377,14 +414,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>webView</sender>
-   <signal>loadFinished(bool)</signal>
+   <sender>listDLC</sender>
+   <signal>itemChanged(QListWidgetItem*)</signal>
    <receiver>MainWindow</receiver>
-   <slot>webviewLoadFinished(bool)</slot>
+   <slot>listItemChanged(QListWidgetItem*)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>349</x>
-     <y>200</y>
+     <x>400</x>
+     <y>490</y>
     </hint>
     <hint type="destinationlabel">
      <x>349</x>
